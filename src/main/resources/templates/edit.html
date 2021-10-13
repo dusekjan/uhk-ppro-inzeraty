@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upravit inzerát</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<h2>Zadejte nové údaje:</h2>
+
+<form id="form_uprava_inzerat" action="#" th:action="@{/edit(akce=edit)}" th:object="${inzerat}" method="post">
+    <input style="display: none" th:field="*{id}">
+    <label for="text">Popis inzerátu:</label><br>
+    <input type="text" id="text" th:field="*{text}"><br>
+    <label for="category">Vyberte kategorii:</label><br>
+    <select name="category" id="category" th:field="*{kategorie}">
+        <option value="nakup">Nákup</option>
+        <option value="prodej">Prodej</option>
+        <option value="vymena">Výměna</option>
+    </select><br>
+    <label for="pass">Vložte heslo pro změnu inzerátu:</label><br>
+    <input type="text" id="pass" th:field="*{hesloProUpravu}"><br>
+
+    <input type="submit" value="Změnit inzerát">
+</form>
+
+<form id="smazat_inzerat" action="#" th:action="@{/delete}" th:object="${inzerat}" method="post">
+    <input style="display: none" th:field="*{id}">
+    <label for="pass2"><b>Vložte heslo pro smazání inzerátu:</b></label><br>
+    <input type="text" id="pass2" th:field="*{hesloProUpravu}"><br>
+
+    <input type="submit" value="Smazat inzerát">
+</form>
+</body>
+</html>

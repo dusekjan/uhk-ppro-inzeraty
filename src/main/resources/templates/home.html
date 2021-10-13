@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Online Inzeráty</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<div style="text-align: center">
+    Zobrazit inzeráty z kategorie:<br>
+    <a th:href="@{/(category=nakup)}">NÁKUP</a> -
+    <a th:href="@{/(category=prodej)}">PRODEJ</a> -
+    <a th:href="@{/(category=vymena)}">VÝMĚNA</a>
+</div>
+
+<table id="inzeraty" style="border: black;">
+    <tr>
+        <th>ID</th>
+        <th>TEXT</th>
+        <th>KATEGORIE </th>
+        <th>KÓD PRO ÚPRAVU<br><i>Kódy jsou vypsané pouze pro testovací potřeby</i></th>
+        <th></th>
+    </tr>
+    <tr th:each="inzerat: ${inzeraty}">
+        <td th:text="${inzerat.id}" />
+        <td th:text="${inzerat.text}" />
+        <td th:text="${inzerat.kategorie}" />
+        <td th:text="${inzerat.hesloProUpravu}" />
+        <td><a th:href="@{/editPage(id=${inzerat.id})}">Upravit</a></td>
+    </tr>
+</table>
+
+<form id="form_novy_inzerat" action="#" th:action="@{/(akce=add)}" th:object="${inzerat}" method="post">
+    <label for="text">Popis inzerátu:</label><br>
+    <input type="text" id="text" th:field="*{text}"><br>
+    <label for="category">Vyberte kategorii:</label><br>
+    <select name="category" id="category" th:field="*{kategorie}">
+        <option value="nakup">Nákup</option>
+        <option value="prodej">Prodej</option>
+        <option value="vymena">Výměna</option>
+    </select><br>
+    <input type="submit" value="Odeslat inzerát">
+</form>
+
+</body>
+</html>
