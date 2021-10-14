@@ -27,7 +27,7 @@ public class InzeratyApplication implements WebMvcConfigurer {
         ulozisteInzeratu.pridej(new Inzerat("prodej", "Prodam kralika s papirama", new BigDecimal(5000)));
         ulozisteInzeratu.pridej(new Inzerat("prodej", "Prodam pytel brambor", new BigDecimal(50)));
         ulozisteInzeratu.pridej(new Inzerat("vymena", "Vymenim iphone 12 za iphone 13", new BigDecimal(0)));
-        ulozisteInzeratu.pridej(new Inzerat("vymena", "Vymenim pocitatc s Windows za Linux", new BigDecimal(0)));
+        ulozisteInzeratu.pridej(new Inzerat("vymena", "Vymenim pocitac s Windows za Linux", new BigDecimal(0)));
         ulozisteInzeratu.pridej(new Inzerat("vymena", "Vymenim cokoliv do 1000,-", new BigDecimal(1000)));
         return ulozisteInzeratu;
     }
