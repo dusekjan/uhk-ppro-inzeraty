@@ -16,6 +16,14 @@ public class Inzerat {
 		hesloProUpravu = UUID.randomUUID().toString().substring(0,6);
 		datum = new Date();
 	}
+
+	public Inzerat(String kategorie, String text, BigDecimal cena) {
+		this.kategorie = kategorie;
+		this.text = text;
+		this.cena = cena;
+		hesloProUpravu = UUID.randomUUID().toString().substring(0,6);
+		datum = new Date();
+	}
 	
 	public int getId() {
 		return id;

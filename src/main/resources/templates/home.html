@@ -18,8 +18,10 @@
 <table id="inzeraty" style="border: black;">
     <tr>
         <th>ID</th>
-        <th>TEXT</th>
-        <th>KATEGORIE </th>
+        <th>POPIS</th>
+        <th>KATEGORIE</th>
+        <th>CENA</th>
+        <th>DATUM</th>
         <th>KÓD PRO ÚPRAVU<br><i>Kódy jsou vypsané pouze pro testovací potřeby</i></th>
         <th></th>
     </tr>
@@ -27,6 +29,8 @@
         <td th:text="${inzerat.id}" />
         <td th:text="${inzerat.text}" />
         <td th:text="${inzerat.kategorie}" />
+        <td th:text="${inzerat.cena}" />
+        <td th:text="${inzerat.datum}" />
         <td th:text="${inzerat.hesloProUpravu}" />
         <td><a th:href="@{/editPage(id=${inzerat.id})}">Upravit</a></td>
     </tr>
@@ -41,6 +45,8 @@
         <option value="prodej">Prodej</option>
         <option value="vymena">Výměna</option>
     </select><br>
+    <label for="cena">Cena v Kč:</label><br>
+    <input type="text" id="cena" th:field="*{cena}"><br>
     <input type="submit" value="Odeslat inzerát">
 </form>
 

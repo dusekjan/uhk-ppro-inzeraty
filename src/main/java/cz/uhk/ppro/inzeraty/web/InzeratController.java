@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class InzeratController {
 
     private UlozisteInzeratu ulozisteInzeratu = null;
-
     public UlozisteInzeratu getUlozisteInzeratu() {
         return ulozisteInzeratu;
     }
